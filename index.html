@@ -8,6 +8,7 @@ color: white;
 font-family: "Arial", sans-serif;
 font-size: 24px;
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
@@ -28,12 +29,19 @@ width: 100%;
 }
 }
 .chat-container {
+margin-top: 20px;
+text-align: center;
+}
+.chat-form {
 display: flex;
 flex-direction: column;
-align-items: flex-start;
-margin-top: 20px;
+align-items: center;
 }
-.chat-bubble {
+.chat-input {
+margin-bottom: 10px;
+padding: 5px;
+}
+.chat-response {
 background-color: #333;
 color: white;
 padding: 10px;
@@ -48,9 +56,11 @@ border-radius: 10px;
 <p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
 </div>
 <div class="chat-container">
-<div class="chat-bubble">
-<p id="chat-response"></p>
-</div>
+<form class="chat-form">
+<input class="chat-input" placeholder="Inserisci la tua domanda" type="text">
+<button type="submit">Invia</button>
+<div class="chat-response"></div>
+</form>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
@@ -73,10 +83,12 @@ var chatResponses = {
 "chi ti ha creato?": "Sono stato creato da OpenAI, un'azienda specializzata in intelligenza artificiale."
 // Aggiungi altre domande e risposte qui
 };
-$(".chat-bubble").on("click", function() {
-var userQuestion = prompt("Fai una domanda:");
-var response = chatResponses[userQuestion.toLowerCase()] || "Mi dispiace, non posso rispondere a quella domanda.";
-$("#chat-response").text(response);
+$(".chat-form").on("submit", function(event) {
+event.preventDefault();
+var userQuestion = $(".chat-input").val().toLowerCase();
+var response = chatResponses[userQuestion] || "Mi dispiace, non posso rispondere a quella domanda.";
+$(".chat-response").text(response);
+$(".chat-input").val('');
 });
 });
 </script>
