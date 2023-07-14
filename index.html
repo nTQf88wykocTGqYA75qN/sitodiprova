@@ -14,10 +14,10 @@ height: 100vh;
 overflow: hidden;
 }
 .typewriter {
-white-space: nowrap;
 overflow: hidden;
+white-space: nowrap;
 animation: typing 5s steps(40);
-width: 0; /* Inizialmente il testo è nascosto */
+animation-fill-mode: forwards; /* Il testo rimane fermo alla fine dell'animazione */
 }
 @keyframes typing {
 from {
@@ -29,7 +29,7 @@ width: 100%;
 }
 </style>
 </head><body>
-<div class="typewriter">
-<p>Ciao, hai aperto lo scrigno della ricchezza.</p>
+<div class="typewriter"><div style="text-align: center;">
+</div><p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
 </div>
 </body></html>
