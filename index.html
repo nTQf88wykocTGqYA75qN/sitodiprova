@@ -1,8 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head><title>Il Sito dell'Intelligenza Artificiale</title>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
 <style>
 body {
 background-color: black;
@@ -16,10 +13,10 @@ height: 100vh;
 overflow: hidden;
 }
 .typewriter {
-white-space: nowrap;
 overflow: hidden;
+white-space: nowrap;
 animation: typing 5s steps(40);
-width: 0;
+animation-fill-mode: forwards; /* Il testo rimane fermo alla fine dell'animazione */
 }
 @keyframes typing {
 from {
@@ -31,8 +28,8 @@ width: 100%;
 }
 </style>
 </head><body>
-<div class="typewriter">
-<p id="greeting">E' benvenuto, hai aperto lo scrigno della ricchezza.</p>
+<div class="typewriter"><div style="text-align: center;">
+</div><p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
 </div>
 <script>
 $(document).ready(function() {
