@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head><title>Il Sito dell'Intelligenza Artificiale</title>
+
 <style>
 body {
 background-color: black;
@@ -16,7 +17,7 @@ overflow: hidden;
 overflow: hidden;
 white-space: nowrap;
 animation: typing 5s steps(40);
-animation-fill-mode: forwards; /* Il testo rimane fermo alla fine dell'animazione */
+animation-fill-mode: forwards;
 }
 @keyframes typing {
 from {
@@ -26,11 +27,33 @@ to {
 width: 100%;
 }
 }
+.chat-container {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+margin-top: 20px;
+}
+.chat-bubble {
+background-color: #333;
+color: white;
+padding: 10px;
+margin-bottom: 10px;
+border-radius: 10px;
+}
 </style>
 </head><body>
-<div class="typewriter"><div style="text-align: center;">
-</div><p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
+<div class="typewriter">
+<div style="text-align: center;">
 </div>
+<p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
+</div>
+<div class="chat-container">
+<div class="chat-bubble">
+<p id="chat-response"></p>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
 <script>
 $(document).ready(function() {
 var greetingText = $("#greeting").text();
@@ -42,7 +65,19 @@ $("#greeting").translate('es', greetingText);
 } else if (visitorLanguage.startsWith("zh")) {
 $("#greeting").translate('zh-CN', greetingText);
 }
+var chatResponses = {
+"come posso guadagnare?": "Imbecille, non puoi guadagnare!",
+"qual è il senso della vita?": "Il senso della vita è una domanda complessa senza una risposta definitiva.",
+"cosa fai qui?": "Sono qui per rispondere alle tue domande e aiutarti con le informazioni che posso fornire.",
+"cosa c'è di nuovo?": "Sono sempre in evoluzione, pronto ad aiutarti con le tue curiosità e domande!",
+"chi ti ha creato?": "Sono stato creato da OpenAI, un'azienda specializzata in intelligenza artificiale."
+// Aggiungi altre domande e risposte qui
+};
+$(".chat-bubble").on("click", function() {
+var userQuestion = prompt("Fai una domanda:");
+var response = chatResponses[userQuestion.toLowerCase()] || "Mi dispiace, non posso rispondere a quella domanda.";
+$("#chat-response").text(response);
+});
 });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
 </body></html>
