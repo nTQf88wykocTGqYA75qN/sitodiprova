@@ -7,12 +7,15 @@ background-color: black;
 color: white;
 font-family: "Arial", sans-serif;
 font-size: 24px;
-text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
 overflow: hidden;
 }
 .typewriter {
-overflow: hidden; /* Nasconde il testo in eccesso */
-white-space: nowrap; /* Evita il ritorno a capo automatico */
+overflow: hidden;
+white-space: nowrap;
 animation: typing 5s steps(40);
 }
 @keyframes typing {
