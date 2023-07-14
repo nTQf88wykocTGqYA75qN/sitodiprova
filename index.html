@@ -8,20 +8,24 @@ color: white;
 font-family: "Arial", sans-serif;
 font-size: 24px;
 text-align: center;
-animation: type-effect 5s steps(40, end);
 overflow: hidden;
 }
-@keyframes type-effect {
-0% {
+.typewriter {
+overflow: hidden; /* Nasconde il testo in eccesso */
+white-space: nowrap; /* Evita il ritorno a capo automatico */
+animation: typing 5s steps(40);
+}
+@keyframes typing {
+from {
 width: 0;
 }
-100% {
+to {
 width: 100%;
 }
 }
 </style>
 </head><body>
-<div>
+<div class="typewriter">
 <p>E' benvenuto, hai aperto lo scrigno della ricchezza.</p>
 </div>
 </body></html>
