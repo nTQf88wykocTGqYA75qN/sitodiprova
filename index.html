@@ -104,12 +104,14 @@ $("#greeting").translate('es', greetingText);
 $("#greeting").translate('zh-CN', greetingText);
 }
 var chatResponses = {
-"come posso guadagnare?": "Imbecille, non puoi guadagnare!",
-"qual è il senso della vita?": "Il senso della vita è una domanda complessa senza una risposta definitiva.",
-"cosa fai qui?": "Sono qui per rispondere alle tue domande e aiutarti con le informazioni che posso fornire.",
-"cosa c'è di nuovo?": "Sono sempre in evoluzione, pronto ad aiutarti con le tue curiosità e domande!",
-"chi ti ha creato?": "Sono stato creato da OpenAI, un'azienda specializzata in intelligenza artificiale."
-// Aggiungi altre domande e risposte qui
+"come posso guadagnare con il Meme Coin?": "Puoi guadagnare con il Meme Coin partecipando all'acquisto e alla vendita delle criptovalute, sfruttando le fluttuazioni di prezzo per ottenere un profitto.",
+"qual è il prezzo attuale del Meme Coin?": "Il prezzo del Meme Coin è soggetto a fluttuazioni di mercato. Puoi controllare il prezzo attuale su piattaforme di scambio di criptovalute.",
+"quando è il momento migliore per acquistare Meme Coin?": "Non possiamo fornire consulenza finanziaria. Tuttavia, molti investitori cercano di acquistare a un prezzo basso per ottenere un miglior rendimento.",
+"quali sono i rischi dell'investimento in Meme Coin?": "L'investimento in Meme Coin comporta rischi come la volatilità del prezzo, l'incertezza del mercato e la potenziale perdita di capitale. Fai sempre le tue ricerche e consulta un consulente finanziario prima di investire.",
+"dove posso acquistare Meme Coin?": "Puoi acquistare Meme Coin su piattaforme di scambio di criptovalute come Binance, Coinbase, Kraken, ecc.",
+"qual è la differenza tra Meme Coin e Bitcoin?": "Meme Coin è una criptovaluta specifica, spesso legata a un meme o un tema specifico, mentre Bitcoin è la prima e la più famosa criptovaluta.",
+"posso utilizzare Meme Coin per fare acquisti reali?": "La disponibilità dei negozi e dei servizi che accettano Meme Coin varia. Alcuni negozi online e servizi potrebbero accettare pagamenti in Meme Coin, ma la maggior parte delle transazioni avviene ancora con valute tradizionali.",
+"come posso conservare i miei Meme Coin in modo sicuro?": "Puoi conservare i tuoi Meme Coin in un portafoglio digitale sicuro, noto anche come portafoglio criptovalute, che può essere sia online che offline. Assicurati di fare le tue ricerche e di seguire le migliori pratiche di sicurezza.",
 };
 $(".chat-form").on("submit", function(event) {
 event.preventDefault();
@@ -126,13 +128,9 @@ $(".chat-response").text(response);
 $(".buy-input").val('');
 });
 function getChatResponse(question) {
-// Implementa qui la logica per ottenere una risposta ragionata in base alla domanda
-if (question === "qual è il tuo nome?") {
-return "Sono un'Intelligenza Artificiale, non ho un nome proprio.";
-} else if (question === "cosa puoi fare?") {
-return "Posso rispondere a domande, fornire informazioni e aiutarti con i tuoi dubbi.";
-} else if (question === "cosa succederà nel futuro?") {
-return "Il futuro è incerto, ma con l'evoluzione della tecnologia ci saranno molte opportunità e sfide.";
+var response = chatResponses[question];
+if (response) {
+return response;
 } else {
 return "Mi dispiace, non ho una risposta per questa domanda al momento.";
 }
