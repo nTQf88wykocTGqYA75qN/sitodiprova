@@ -40,6 +40,9 @@ align-items: center;
 .chat-input {
 margin-bottom: 10px;
 padding: 5px;
+background-color: #333;
+color: white;
+width: 400px;
 }
 .chat-response {
 background-color: #333;
@@ -47,6 +50,7 @@ color: white;
 padding: 10px;
 margin-bottom: 10px;
 border-radius: 10px;
+width: 400px;
 }
 </style>
 </head><body>
@@ -86,10 +90,22 @@ var chatResponses = {
 $(".chat-form").on("submit", function(event) {
 event.preventDefault();
 var userQuestion = $(".chat-input").val().toLowerCase();
-var response = chatResponses[userQuestion] || "Mi dispiace, non posso rispondere a quella domanda.";
+var response = getChatResponse(userQuestion);
 $(".chat-response").text(response);
 $(".chat-input").val('');
 });
+function getChatResponse(question) {
+// Implementa qui la logica per ottenere una risposta ragionata in base alla domanda
+if (question === "qual è il tuo nome?") {
+return "Sono un'Intelligenza Artificiale, non ho un nome proprio.";
+} else if (question === "cosa puoi fare?") {
+return "Posso rispondere a domande, fornire informazioni e aiutarti con i tuoi dubbi.";
+} else if (question === "cosa succederà nel futuro?") {
+return "Il futuro è incerto, ma con l'evoluzione della tecnologia ci saranno molte opportunità e sfide.";
+} else {
+return "Mi dispiace, non ho una risposta per questa domanda al momento.";
+}
+}
 });
 </script>
 </body></html>
