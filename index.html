@@ -52,6 +52,25 @@ margin-bottom: 10px;
 border-radius: 10px;
 width: 400px;
 }
+.buy-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+}
+.buy-input {
+margin-bottom: 10px;
+padding: 5px;
+width: 400px;
+}
+.buy-button {
+padding: 10px 20px;
+background-color: #666;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
 </style>
 </head><body>
 <div class="typewriter">
@@ -64,6 +83,11 @@ width: 400px;
 <input class="chat-input" placeholder="Inserisci la tua domanda" type="text">
 <button type="submit">Invia</button>
 <div class="chat-response"></div>
+</form>
+<form class="buy-form">
+<h3>Acquista Meme Coin</h3>
+<input class="buy-input" placeholder="Inserisci l'importo in Meme Coin" type="number">
+<button type="submit" class="buy-button">Acquista</button>
 </form>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -93,6 +117,13 @@ var userQuestion = $(".chat-input").val().toLowerCase();
 var response = getChatResponse(userQuestion);
 $(".chat-response").text(response);
 $(".chat-input").val('');
+});
+$(".buy-form").on("submit", function(event) {
+event.preventDefault();
+var amount = $(".buy-input").val();
+var response = "Hai acquistato " + amount + " Meme Coin.";
+$(".chat-response").text(response);
+$(".buy-input").val('');
 });
 function getChatResponse(question) {
 // Implementa qui la logica per ottenere una risposta ragionata in base alla domanda
