@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head><title>Il Sito dell'Intelligenza Artificiale</title>
-
 <style>
 body {
 background-color: black;
@@ -8,7 +7,6 @@ color: white;
 font-family: "Arial", sans-serif;
 font-size: 24px;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 100vh;
@@ -18,7 +16,7 @@ overflow: hidden;
 overflow: hidden;
 white-space: nowrap;
 animation: typing 5s steps(40);
-animation-fill-mode: forwards;
+animation-fill-mode: forwards; /* Il testo rimane fermo alla fine dell'animazione */
 }
 @keyframes typing {
 from {
@@ -28,70 +26,11 @@ to {
 width: 100%;
 }
 }
-.chat-container {
-margin-top: 20px;
-text-align: center;
-}
-.chat-form {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.chat-input {
-margin-bottom: 10px;
-padding: 5px;
-background-color: #333;
-color: white;
-width: 400px;
-}
-.chat-response {
-background-color: #333;
-color: white;
-padding: 10px;
-margin-bottom: 10px;
-border-radius: 10px;
-width: 400px;
-}
-.buy-form {
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-top: 20px;
-}
-.buy-input {
-margin-bottom: 10px;
-padding: 5px;
-width: 400px;
-}
-.buy-button {
-padding: 10px 20px;
-background-color: #666;
-color: white;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-}
 </style>
 </head><body>
-<div class="typewriter">
-<div style="text-align: center;">
+<div class="typewriter"><div style="text-align: center;">
+</div><p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
 </div>
-<p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
-</div>
-<div class="chat-container">
-<form class="chat-form">
-<input class="chat-input" placeholder="Inserisci la tua domanda" type="text">
-<button type="submit">Invia</button>
-<div class="chat-response"></div>
-</form>
-<form class="buy-form">
-<h3>Acquista Meme Coin</h3>
-<input class="buy-input" placeholder="Inserisci l'importo in Meme Coin" type="number">
-<button type="submit" class="buy-button">Acquista</button>
-</form>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
 <script>
 $(document).ready(function() {
 var greetingText = $("#greeting").text();
@@ -103,38 +42,7 @@ $("#greeting").translate('es', greetingText);
 } else if (visitorLanguage.startsWith("zh")) {
 $("#greeting").translate('zh-CN', greetingText);
 }
-var chatResponses = {
-"come posso guadagnare con il Meme Coin?": "Puoi guadagnare con il Meme Coin partecipando all'acquisto e alla vendita delle criptovalute, sfruttando le fluttuazioni di prezzo per ottenere un profitto.",
-"qual è il prezzo attuale del Meme Coin?": "Il prezzo del Meme Coin è soggetto a fluttuazioni di mercato. Puoi controllare il prezzo attuale su piattaforme di scambio di criptovalute.",
-"quando è il momento migliore per acquistare Meme Coin?": "Non possiamo fornire consulenza finanziaria. Tuttavia, molti investitori cercano di acquistare a un prezzo basso per ottenere un miglior rendimento.",
-"quali sono i rischi dell'investimento in Meme Coin?": "L'investimento in Meme Coin comporta rischi come la volatilità del prezzo, l'incertezza del mercato e la potenziale perdita di capitale. Fai sempre le tue ricerche e consulta un consulente finanziario prima di investire.",
-"dove posso acquistare Meme Coin?": "Puoi acquistare Meme Coin su piattaforme di scambio di criptovalute come Binance, Coinbase, Kraken, ecc.",
-"qual è la differenza tra Meme Coin e Bitcoin?": "Meme Coin è una criptovaluta specifica, spesso legata a un meme o un tema specifico, mentre Bitcoin è la prima e la più famosa criptovaluta.",
-"posso utilizzare Meme Coin per fare acquisti reali?": "La disponibilità dei negozi e dei servizi che accettano Meme Coin varia. Alcuni negozi online e servizi potrebbero accettare pagamenti in Meme Coin, ma la maggior parte delle transazioni avviene ancora con valute tradizionali.",
-"come posso conservare i miei Meme Coin in modo sicuro?": "Puoi conservare i tuoi Meme Coin in un portafoglio digitale sicuro, noto anche come portafoglio criptovalute, che può essere sia online che offline. Assicurati di fare le tue ricerche e di seguire le migliori pratiche di sicurezza.",
-};
-$(".chat-form").on("submit", function(event) {
-event.preventDefault();
-var userQuestion = $(".chat-input").val().toLowerCase();
-var response = getChatResponse(userQuestion);
-$(".chat-response").text(response);
-$(".chat-input").val('');
-});
-$(".buy-form").on("submit", function(event) {
-event.preventDefault();
-var amount = $(".buy-input").val();
-var response = "Hai acquistato " + amount + " Meme Coin.";
-$(".chat-response").text(response);
-$(".buy-input").val('');
-});
-function getChatResponse(question) {
-var response = chatResponses[question];
-if (response) {
-return response;
-} else {
-return "Mi dispiace, non ho una risposta per questa domanda al momento.";
-}
-}
 });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
 </body></html>
