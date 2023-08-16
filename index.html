@@ -7,8 +7,9 @@ color: white;
 font-family: "Arial", sans-serif;
 font-size: 24px;
 display: flex;
-justify-content: center;
+flex-direction: column;
 align-items: center;
+justify-content: center;
 height: 100vh;
 overflow: hidden;
 }
@@ -31,18 +32,26 @@ width: 100%;
 <div class="typewriter"><div style="text-align: center;">
 </div><p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
 </div>
-<script>
-$(document).ready(function() {
-var greetingText = $("#greeting").text();
-var visitorLanguage = navigator.language || navigator.userLanguage;
-if (visitorLanguage.startsWith("en")) {
-$("#greeting").translate('en', greetingText);
-} else if (visitorLanguage.startsWith("es")) {
-$("#greeting").translate('es', greetingText);
-} else if (visitorLanguage.startsWith("zh")) {
-$("#greeting").translate('zh-CN', greetingText);
-}
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-translate/1.4.0/jquery.translate.min.js"></script>
+<table style="margin-top: 20px;">
+<tbody><tr>
+<th>Scarica il pdf:</th>
+<th>e apri lo scrigno della ricchezza:</th>
+<th>Nome della lingua:</th>
+</tr>
+<tr>
+<td>Download the PDF:</td>
+<td>Unlock the treasure chest:</td>
+<td>Language Name:</td>
+</tr>
+<tr>
+<td>Descargar el PDF:</td>
+<td>Abre el cofre del tesoro:</td>
+<td>Nombre del idioma:</td>
+</tr>
+<tr>
+<td>Télécharger le PDF:</td>
+<td>Ouvrir le coffre au trésor:</td>
+<td>Nom de la langue:</td>
+</tr>
+</tbody></table>
 </body></html>
