@@ -1,23 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head><title>Il Sito dell'Intelligenza Artificiale</title>
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Il Sito dell'Intelligenza Artificiale</title>
+
 <style>
 body {
 background-color: black;
 color: white;
 font-family: "Arial", sans-serif;
 font-size: 24px;
+margin: 0;
+padding: 0;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 100vh;
-overflow: hidden;
 }
 .typewriter {
 overflow: hidden;
 white-space: nowrap;
 animation: typing 5s steps(40);
-animation-fill-mode: forwards; /* Il testo rimane fermo alla fine dell'animazione */
+animation-fill-mode: forwards;
 }
 @keyframes typing {
 from {
@@ -27,12 +31,24 @@ to {
 width: 100%;
 }
 }
+table {
+border-collapse: collapse;
+width: 100%;
+max-width: 800px;
+margin-top: 20px;
+}
+th, td {
+border: 1px solid white;
+padding: 10px;
+text-align: center;
+}
 </style>
 </head><body>
-<div class="typewriter"><div style="text-align: center;">
-</div><p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
+<div class="typewriter">
+<div style="text-align: center;"></div>
+<p style="text-align: center;">Ciao, hai aperto lo scrigno della ricchezza.</p>
 </div>
-<table style="margin-top: 20px;">
+<table>
 <tbody><tr>
 <th>Scarica il pdf:</th>
 <th>e apri lo scrigno della ricchezza:</th>
